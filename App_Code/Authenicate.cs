@@ -20,7 +20,7 @@ public class Authenicate
         mail.Subject = "E Bookshop 2FA";
         mail.Body = "This Is Your 2FA Code. Please Enter it in the web browser \n" + strNum[ShopperID];
        SmtpServer.Port = 587;
-       SmtpServer.Credentials = new System.Net.NetworkCredential("OOPGBookshop@outlook.com", "ckyaBlyat");
+       SmtpServer.Credentials = new System.Net.NetworkCredential("OOPGBookshop@outlook.com", "");
        SmtpServer.EnableSsl = true;
        SmtpServer.Send(mail);
 
