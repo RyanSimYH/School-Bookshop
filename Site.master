@@ -1,0 +1,87 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="Site" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        #containter{
+            width: 960px;
+            margin-left:auto;
+            margin-right:auto;
+        }
+        #header {
+            border-bottom:5px solid #efefef;
+        }
+        #navbar{
+            float:left;
+            width:155px;
+            background-color:#ffcc99;
+            border-right:5px solid #efefef;
+        }
+        #content{
+            margin-left:155px;
+        }
+        #content-inside{
+            margin-left:10px;
+            margin-right:10px;
+        }
+        #footer{
+            border-top:5px solid #efefef;
+            clear:both;
+            text-align:center;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="container">
+            <div id="header">
+                <asp:Image ID="Image1" runat="server" ImageUrl="images\ebookshop.png" Width="960px" />
+            </div>
+            <div id="navbar">
+                <table>
+                    <tr>
+                        <td style="background-color: #ffcc99">
+                            <asp:Label ID="lblWelcome" runat="server"></asp:Label>
+                            <br />
+                            <asp:Button ID="regButton" runat="server" CausesValidation="False" onclick="regButton_Click" style="font-family: Arial; font-size: medium; font-weight: 700" Text="Register" Width="87px" />
+                            &nbsp;
+                            <asp:Button ID="loginButton" runat="server" CausesValidation="False" onclick="loginButton_Click" style="font-family: Arial; font-size: medium; font-weight: 700" Text="Login" Width="57px" />
+                            <br />
+                            <asp:Button ID="logoutButton" runat="server" CausesValidation="False" onclick="logoutButton_Click" style="font-family: Arial; font-size: medium; font-weight: 700" Text="Logout" Width="72px" />
+                            <br />
+                            &nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td><a href="Dept.aspx">
+                            <img id="imgCat" alt="Categories" height="36" src="images/greenCategories.jpg" style="margin-left:auto;margin-right:auto;width:152px" /></a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="ProductSearch.aspx">
+                            <img id="imgSearch" alt="Search" height="36" src="images/greenSearch.jpg" style="margin-left:auto;margin-right:auto;width:152px" /></a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="ShopCart.aspx">
+                            <img id="imgShopCart" alt="Shopping Cart" height="36" src="images/greenShoppingCart.jpg" style="margin-left:auto;margin-right:auto;width:152px" /></a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="Shipping.aspx">
+                            <img id="imgCheckOut" alt="Check Out" height="36" src="images/greenCheckOut.jpg" style="width: 152px" /></a></td>
+                    </tr>
+                </table>
+            </div>
+            <div id="content">
+                <div id ="content-inside">
+                     <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+            <div id="footer"><strong>&amp;copy; ECE Division, Ngee Ann Polytechnic</strong></div>
+        </div>
+    </form>
+</body>
+</html>
